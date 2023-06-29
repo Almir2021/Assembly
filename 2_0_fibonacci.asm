@@ -10,21 +10,37 @@ start:
 ;Your program starts here
 
 call read_hex
-
+dec eax
 mov ebx,1
 mov ecx,1
 mov edx,eax
+mov eax,1
+call print_eax
+call print_eax
+mov esi,1
 
 loop1:
+ 
+ mov ecx,esi
+ add eax,ecx
+  mov ebx,eax
+  
+ 
+ 
+ 
+  call print_eax
+ 
+   sub ebx,ecx
+   mov esi,ebx
 
- add ebx,ecx
- mov esi ,ebx
 
  dec edx
  jnz loop1
 
 
- call print_eax
+
+
+ 
 
   ; Exit the proicces
      push 0 
