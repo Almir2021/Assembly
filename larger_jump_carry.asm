@@ -12,25 +12,39 @@ format PE console
 
 
       call read_hex
-
+      mov ebx,eax
+      mov edx,eax
    ; Read the number
     call read_hex
 
-    mov ebx,eax
-    mov ecx,ebx
+      mov ecx,eax
+      mov esi,ecx
 
 
-     sub ebx,eax
-     jc print_eaxL
+     sub ebx,ecx
+     ;if second number larger print him.
+     jc print_eaxLargest_second
+    jz they_are_equal
+
+
+       sub ecx,edx
+       jc print_first_largest
+       jz they_are_equal
+
+    
+     they_are_equal:
+       mov eax,0
+
+      print_eaxLargest_second:
+
+      mov eax,edx
+
+      print_first_largest:
+      mov eax,esi
 
 
 
-       mov eax,ecx
-
-       call print_eax
-
-
-      print_eaxL:
+     
 
       call print_eax
 
