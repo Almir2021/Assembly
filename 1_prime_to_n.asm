@@ -13,19 +13,43 @@ start:
   call read_hex
 
   mov ebx,eax
- xor eax,eax
+ xor edx,edx
+ mov eax,edx
+ mov eax,ebx
   
   call print_eax
  loop1:
+  mov ecx,ebx
+  mov eax,ecx
   
-  inc eax
+  inc esi
+
+  div esi
+  cmp edx,0
+  je its_one
   
   call print_eax
 
 
  dec ebx
- jnz loop1 
+ cmp ebx, 0
+ je exit_0 
+ jmp loop1 
 
+
+  its_one:
+  mov eax,1
+  call print_eax
+  jmp exit_1
+   
+  
+  exit_0:
+  mov eax,0
+  call print_eax
+
+
+
+exit_1:
  push 0 
 
  call [ExitProcess]
