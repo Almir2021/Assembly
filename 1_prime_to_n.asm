@@ -17,12 +17,12 @@ start:
  mov eax,edx
  mov eax,ebx
   
-  call print_eax
- loop1:
-  mov ecx,ebx
-  mov eax,ecx
   
-  inc esi
+ loop1:
+  mov esi,ebx
+
+  
+  dec esi
 
   div esi
   cmp edx,0
