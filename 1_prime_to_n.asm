@@ -13,37 +13,42 @@ start:
   call read_hex
 
   mov ebx,eax
+ mov ecx,eax
+ xor esi,esi 
  xor edx,edx
- mov eax,edx
- mov eax,ebx
+  
   
   
  loop1:
+  
+  dec ebx
+  
   mov esi,ebx
+  sub esi,1 
+  jz print_1
 
+  sub ebx,0
+  jz print_1
+
+  mov eax,ecx
+
+  div ebx
+
+  sub edx,0
   
-  dec esi
-
-  div esi
-  cmp edx,0
-  je its_one
+  jnz loop1
   
-  call print_eax
+  
+  jmp print_0
 
 
- dec ebx
- cmp ebx, 0
- je exit_0 
- jmp loop1 
-
-
-  its_one:
+   print_1:
   mov eax,1
   call print_eax
   jmp exit_1
    
   
-  exit_0:
+  print_0:
   mov eax,0
   call print_eax
 
