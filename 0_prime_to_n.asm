@@ -12,23 +12,34 @@ section '.text' code readable executable
 start:
 
   call read_hex
-  mov ebx,eax
-  mov eax,0
-  
+   
+   mov ebx,eax
+   xor edx,edx
+    mov ecx,eax
 
-
-
-  loop1:
-  
-
-
-inc eax
- 
- call print_eax
-
+    loop1:
 
     dec ebx
-  jnz loop1
+
+      mov esi,ecx
+     sub esi,0
+     jz print0
+     
+     sub esi,1
+     jz print1
+
+     mov eax,ebx
+
+     div  edx
+
+     sub edx,0
+     jnz loop1
+
+     
+
+
+
+
 
   ; Exit the process:
 	push	0
