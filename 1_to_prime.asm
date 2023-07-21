@@ -21,6 +21,8 @@ entry start
 
     call print_eax
 
+    inc eax
+
     dec ebx
     jz exit_1
      
