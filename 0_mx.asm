@@ -18,6 +18,7 @@ looper:
 
 call read_hex
 
+; compare enterd number t ooriginal one
 cmp eax,edx
 
 jbe eax_is_smaller
