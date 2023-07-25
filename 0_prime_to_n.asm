@@ -21,24 +21,36 @@ start:
 
     dec ebx
 
-      mov esi,ecx
-     sub esi,0
-     jz print0
-     
-     sub esi,1
-     jz print1
+      mov esi,ebx
+      sub esi,1
+      jz it_is_the_1
 
-     mov eax,ebx
+      sub ebx,0
+      jz it_is_the_1
 
-     div  edx
+      xor edx,edx
+      mov eax,ecx
+      
+      div ebx
 
-     sub edx,0
+
+
+      sub   edx,0
      jnz loop1
+     jmp it_is_0
 
+     it_is_the_1:
+     mov eax,1
+     jmp it_is_the_end
+
+     it_is_0:
+     mov eax,0 
+
+
+     it_is_the_end:
+
+     call print_eax
      
-
-
-
 
 
   ; Exit the process:
