@@ -41,14 +41,14 @@
   sub edx,0
   jnz do_division
 
-  jmp next_n
+  jmp next_n1
 
   print_esi:
 
   mov eax,esi
   call print_eax
 
-  jmp next_n
+  jmp next_n1
 
   exit:
 
