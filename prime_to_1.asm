@@ -13,16 +13,16 @@
 
   mov ebx,eax
 
-  mov esi,0
+  mov esp,0
 
   next_n:
 
-  inc esi
-  mov edx,esi
+  inc esp
+  mov edx,esp
   sub edx,ebx
   jz  exit 
 
-  mov ecx,esi
+  mov ecx,esp
 
   do_division:
 
@@ -33,7 +33,7 @@
   js  print_esi
 
   mov edx,0
-  mov eax,esi 
+  mov eax,esp 
   
 
   div ecx
@@ -45,7 +45,7 @@
 
   print_esi:
 
-  mov eax,esi
+  mov eax,esp
   call print_eax
 
   jmp next_n1
