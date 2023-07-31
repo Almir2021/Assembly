@@ -20,10 +20,12 @@
 
   loop1:
     
-    mov eax,edx
+    
     call print_eax
     loop2:
     inc eax
+    mov edx,eax
+    mov eax,edx
    
     dec ecx
     jnz loop2
