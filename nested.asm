@@ -16,21 +16,20 @@
    xor eax,eax
    xor edx,edx
 
-  call print_eax
+  
 
   loop1:
     
     
-    call print_eax
     loop2:
     inc eax
-    mov edx,eax
-    mov eax,edx
+    add eax,edx
+    
    
     dec ecx
     jnz loop2
 
-    add edx,eax
+    mov edx,eax
 
 
     
