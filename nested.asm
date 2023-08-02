@@ -12,7 +12,7 @@
    call read_hex
 
    mov ebx,eax
-   mov ecx,3
+   
    xor eax,eax
    xor edx,edx
 
@@ -20,21 +20,30 @@
 
   loop1:
     
-    
+   mov ecx,3
+  
     loop2:
+      
     inc eax
-    add eax,edx
+
     
-   
     dec ecx
     jnz loop2
 
     mov edx,eax
+  call  print_eax
+
+   mov eax,edx
+
+   
+
 
 
     
 
-   call  print_eax
+
+    
+
 
 
    dec ebx 
